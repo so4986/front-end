@@ -1,0 +1,31 @@
+#a{
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 450px;
+    border-radius: 20px;
+    background-color: #4471a3; 
+    transform: translateY(100px) translateX(300px);
+}
+#tbx{
+    width: 250px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: none;
+    color:#fff;
+    font-size: 15px;
+}
+#sub{
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    letter-spacing: 5px;
+    color:#fff;
+    background: none;
+    cursor: pointer;
+}
