@@ -32,3 +32,13 @@
     background: none;
     cursor: pointer;
 }
+#txt
+{
+    width: 150px;
+    height: 30px;
+    color: #070606;
+    border: none;
+    background-color: #4471a3;
+    
+}    
+    
