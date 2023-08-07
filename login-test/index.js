@@ -1,0 +1,10 @@
+$(function(){
+    $('#t').on({
+    'mouseenter':function(){
+    $(this).css({backgroundColor:'#6699FF'});//マウスが入ったとき
+    },
+    'mouseleave':function(){
+    $(this).css({backgroundColor:'#4471a3'});//マウスが放れたとき
+    }
+    });
+});
