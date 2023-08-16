@@ -1,0 +1,79 @@
+*
+{
+    margin:0;
+}
+body
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color:#66CCFF ;
+    justify-self: center;
+    align-items: center;
+
+}
+.contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin:0 auto;
+}
+h1
+{
+    width: 300px;
+    text-align: center;
+    margin-top: 30px;
+    color: #66CCFF;
+}
+.ka
+{
+    width: 35%;
+    height: 100%;
+    background-color: #8aeeef;
+    border-radius: 20px 0 0 20px;
+    background-image: url(neko.jpg);
+    background-size: cover;
+
+}
+.main-1
+{
+    width: 600px;
+    height: 400px;
+    background-color: aquamarine;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 1px 1px 2px rgb(0, 0, 0, 0.5);  
+}
+.main-2
+{
+    width: 60px;
+    height: 100px;
+    
+    align-items: center;
+    flex-direction: column;
+}
+.tbx
+{
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 1px solid cornflowerblue;
+}
+.sub
+{
+    width: 230px;
+    height: 40px;
+    margin-top: 40px;
+    border: none;
+    background: linear-gradient(to right, rgb(0,198,255),rgb(0,114,255));
+    border-radius: 10px;
+}
+.sub:hover
+{
+    box-shadow: 1px 1px 2px rgb(0, 0, 0 ,0.5);
+}
+
