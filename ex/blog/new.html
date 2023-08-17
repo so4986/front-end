@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="new.css">
+    
+</head>
+
+<body>
+    <div>
+        <h1>新規作成</h1>
+        <div class="memo-container">
+            <form class="memo-form">
+                <label for="title">タイトル</label>
+                <input type="text" id="title" required>
+
+                <label for="date">日付</label>
+                <input type="text" id="date" required>
+
+                <label for="category">カテゴリ</label>
+                <input type="text" id="category" required>
+
+                <label for="image">画像</label>
+                <input type="file" id="image">
+
+                <label for="details">詳細</label>
+                <textarea id="details" rows="9"></textarea>
+
+                <div class="memo-buttons">
+                    <button id="save">登録</button>
+                    <button id="back">戻る</button>
+                </div>
+            </form>
+        </div>
+        <script src="jquery-1.11.1.min.js"></script>
+        <script src="new.js"></script>
+</body>
+
+</html>
