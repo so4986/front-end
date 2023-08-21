@@ -27,8 +27,10 @@ public class UserService {
 			return false;
 		}
 	}
-	public UserEntity loginAccount(String email,String passrord) {
-		UserEntity userEntity= userDao.findByEmailAndPassword(email,password);
+	
+	public UserEntity loginAccount(String AccountEmail,String passrord) {
+		UserEntity userEntity= userDao.findByAccountEmailAndPassword(AccountEmail,Password);
+		
 		if(userEntity==null) {
 			return null;
 		}else {
