@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/blog-list.css}">
+	<link rel="stylesheet" th:href="@{/css/new.css}">
+</head>
+
+<body>
+	<main class="t">
+		<div class="wrapper">
+			<nav>
+				<input type="radio" name="tab" id="home">
+				<input type="radio" name="tab" id="new">
+				<input type="radio" name="tab" id="edit">
+				<input type="radio" name="tab" id="out">
+
+				<label for="home" class="home">
+					<a><i class="fa fa-home" aria-hidden="true"></i>home</a>
+				</label>
+
+				<label for="new" class="new">
+					<a><i class="fa fa-plus-square-o" aria-hidden="true"></i>new</a>
+
+				</label> <label for="edit" class="edit">
+					<a><i class="fa fa-pencil-square-o" aria-hidden="true"></i>edit</a>
+				</label>
+
+				<label for="out" class="out">
+					<a><i class="fa fa-sign-out" aria-hidden="true"></i>user</a>
+				</label>
+
+				<div class="tab"></div>
+			</nav>
+		</div>
+	</main>
+	<div>
+		<h1 class="blog-list">Blog List</h1>
+		<div class="blog-list">
+			<article class="blog-topic-article" th:each="blog:${blogList}">
+				<a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}" class="blog-colum">
+					<div class="blog-colum-category">
+						<p th:text=" ${blog.categoryName}"></p>
+					</div>
+					<img th:src="@{/blog_images/{items}(items=${blog.blogImage})}">
+					<div class="colum__box">
+						<p th:text=" ${blog.blogTitle}"></p>
+						<p th:text=" ${blog.article}"></p>
+					</div>
+				</a>
+			</article>
+		</div>
+		<section id="blog-register" class="non-active">
+			<h1>新規作成</h1>
+			<div class="memo-container">
+				<form class="memo-form" th:action="@{/blog/register/process}" enctype="multipart/form-data"
+					method="post">
+					<label for="title">タイトル</label>
+					<input type="text" id="title" required name="blogTitle">
+
+					<label for="category">カテゴリ</label>
+					<input type="text" id="category" required name="categoryName">
+
+					<label for="image">画像</label>
+					<input type="file" id="image" name="blogImage">
+
+					<label for="details">詳細</label>
+					<textarea id="details" rows="9" name="article"></textarea>
+
+					<div class="memo-buttons">
+						<button id="save">登録</button>
+						<button id="back">戻る</button>
+					</div>
+				</form>
+			</div>
+
+
+		</section>
+		<section id="blog-edit" class="non-active">
+			<div>
+				<table class="example3">
+					<tr>
+						<th>カテゴリ</th>
+						<th>編集</th>
+						<th>削除</th>
+					</tr>
+				</table>
+			</div>
+		</section>
+	</div>
+
+<script th:src="@{/js/jquery-3.7.0.min.js}"></script>
+	<script th:src="@{/js/load.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/new.css}">
+    <link rel="stylesheet" th:href="@{/css/edit.css}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>変更</h1>
+        <form class="memo-form">
+            <label for="title">タイトル</label>
+            <input type="text" id="title" required>
+
+            <label for="date">日付</label>
+            <input type="text" id="date" required>
+
+            <label for="category">カテゴリ</label>
+            <input type="text" id="category" required>
+
+            <label for="image">画像</label>
+            <input type="file" id="image">
+
+            <label for="details">詳細</label>
+            <textarea id="details" rows="9"></textarea>
+
+            <div class="memo-buttons">
+                <button id="changeButton">変更する</button>
+            </div>
+            <p id="output"></p>
+        </form>
+    </div>
+
+    <script src="@{/js/jquery-3.7.0.min.js}"></script>
+    <script th:src="@{/js/edit.js}"></script>
+</body>
+
+</html>
