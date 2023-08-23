@@ -4,15 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import Ex.com.ex.service.UserService;
+import Ex.com.ex.service.AccountService;
 
 @Controller
-public class UserController {
+public class AccountController {
 	@Autowired
-	private UserService userService;
+	private AccountService accountService;
 	
 	@GetMapping("/register")
 	public String getUserRegisterpage() {
@@ -21,7 +20,10 @@ public class UserController {
 
 	@PostMapping("/register/process")
 	public String register(@RequestParam String accountName,@RequestParam String accountEmail,@RequestParam String password) {
-		userService.createAccount(accountName, accountEmail, password);
-		return "redirect:/admin/login";
+		if(accountService.createAccount(accountName, accountEmail, password)) {
+			return"login.html";
+		}else {
+			return "register.html";
+		}
 	}
 }

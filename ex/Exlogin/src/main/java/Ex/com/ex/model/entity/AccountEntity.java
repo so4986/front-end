@@ -1,7 +1,5 @@
 package Ex.com.ex.model.entity;
 
-
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="account")
-public class UserEntity {
+public class AccountEntity {
 	@Id
 	@Column(name="account_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,14 +24,18 @@ public class UserEntity {
 	@Column(name="password")
 	private String password;
 	
+	public AccountEntity() {
+		
+	} 
 	
-	
-	public UserEntity(String accountName, String accountEmail, String password) {
+	public AccountEntity(String accountName, String accountEmail, String password) {
 		this.accountName = accountName;
 		this.accountEmail = accountEmail;
 		this.password = password;
 	}
 
+	
+	
 	public Long getAccountId() {
 		return accountId;
 	}
